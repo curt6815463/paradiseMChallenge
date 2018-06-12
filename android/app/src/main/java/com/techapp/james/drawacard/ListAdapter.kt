@@ -37,9 +37,9 @@ class ListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
         holder.cImageView.setImageResource(item.cImage)
         holder.bImageView.setImageResource(item.bImage)
         if (position == (data.size - 1)) {
-            holder.bImageView.alpha = 0.5f
+            holder.bImageView.alpha = 0.7f
             Glide.with(context).load(R.drawable.mockbackground).into(holder.mImageView);
-            holder.mImageView.alpha=0.5f
+            holder.mImageView.alpha=0.7f
         }
     }
 

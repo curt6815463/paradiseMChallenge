@@ -50,9 +50,9 @@ class MainActivity : AppCompatActivity() {
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     randomBtn.alpha = 0.4f
-                    randomBtn.text = ""
                 }
                 MotionEvent.ACTION_UP -> {
+                     randomBtn.text = ""
                     randomBtn.text = "Hide"
                     tFlag = false
                     randomBtn.alpha = 1f

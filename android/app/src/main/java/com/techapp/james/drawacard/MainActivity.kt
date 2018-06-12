@@ -16,7 +16,7 @@ import kotlin.collections.HashMap
 
 class MainActivity : AppCompatActivity() {
     var data = ArrayList<Item>()
-    var tFlag=true
+    var tFlag = true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -54,36 +54,56 @@ class MainActivity : AppCompatActivity() {
                 }
                 MotionEvent.ACTION_UP -> {
                     randomBtn.text = "Hide"
-                    tFlag=false
+                    tFlag = false
                     randomBtn.alpha = 1f
-
                     shineImageView.alpha = 1f
                     var handler = Handler()
                     handler.postDelayed(object : Runnable {
                         override fun run() {
-                            shineImageView.visibility = View.INVISIBLE
+                            var ttt = Thread(object : Runnable {
+                                override fun run() {
+                                    while (shineImageView.alpha > 0) {
+                                        shineImageView.alpha -= 0.1f
+                                        Thread.sleep(100)
+                                    }
+                                }
+                            })
+                            ttt.start()
                             var number = (0..data.size - 1).random()
                             Log.d("num ", number.toString())
                             randomRecyclerView.smoothScrollToPosition(data.size - 1)
-                            randomRecyclerView.addOnScrollListener(object: RecyclerView.OnScrollListener() {
+                            randomRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
                                 override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
                                     super.onScrolled(recyclerView, dx, dy)
                                 }
 
                                 override fun onScrollStateChanged(recyclerView: RecyclerView?, newState: Int) {
                                     super.onScrollStateChanged(recyclerView, newState)
-                                    if(newState==0){
-                                        shineImageView.visibility=View.VISIBLE
-                                        var handler:Handler= Handler()
-                                        handler.postDelayed(object :Runnable{
+                                    if (newState == 0) {
+                                        var tt = Thread(object : Runnable {
                                             override fun run() {
-                                                shineImageView.visibility=View.INVISIBLE
+                                                while (shineImageView.alpha >= 0) {
+                                                    runOnUiThread(object : Runnable {
+                                                        override fun run() {
+                                                            shineImageView.alpha -= 0.1f
+                                                        }
+                                                    })
+                                                    Thread.sleep(100)
+                                                }
                                             }
-                                        },500)
+                                        })
+                                        var handler = Handler()
+                                        handler.postDelayed(object : Runnable {
+                                            override fun run() {
+                                                shineImageView.visibility = View.VISIBLE
+                                                tt.start()
+                                            }
+                                        }, 200)
+
                                     }
                                 }
                             })
-                            mockImageView.visibility=View.INVISIBLE
+                            mockImageView.visibility = View.INVISIBLE
                         }
                     }, 300)
 

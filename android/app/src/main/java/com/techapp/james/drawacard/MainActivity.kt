@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
                                 override fun run() {
                                     while (shineImageView.alpha > 0) {
                                         shineImageView.alpha -= 0.1f
-                                        Thread.sleep(100)
+                                        Thread.sleep(50)
                                     }
                                 }
                             })
@@ -96,6 +96,8 @@ class MainActivity : AppCompatActivity() {
                                         handler.postDelayed(object : Runnable {
                                             override fun run() {
                                                 shineImageView.visibility = View.VISIBLE
+                                                shineImageView.alpha=1f
+                                                randomBtn.isEnabled=false
                                                 tt.start()
                                             }
                                         }, 200)

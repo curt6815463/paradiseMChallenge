@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
         var layoutManager = LinearLayoutManager(this)
         layoutManager.orientation = LinearLayoutManager.HORIZONTAL
         randomRecyclerView.layoutManager = layoutManager
-        randomRecyclerView.isEnabled = false
         setData()
 
         var t = Thread(object : Runnable {
@@ -53,7 +52,7 @@ class MainActivity : AppCompatActivity() {
                     randomBtn.alpha = 0.4f
                 }
                 MotionEvent.ACTION_UP -> {
-                     randomBtn.text = ""
+                    randomBtn.text = ""
                     randomBtn.text = "Hide"
                     tFlag = false
                     randomBtn.alpha = 1f
@@ -97,8 +96,8 @@ class MainActivity : AppCompatActivity() {
                                         handler.postDelayed(object : Runnable {
                                             override fun run() {
                                                 shineImageView.visibility = View.VISIBLE
-                                                shineImageView.alpha=1f
-                                                randomBtn.isEnabled=false
+                                                shineImageView.alpha = 1f
+                                                randomBtn.isEnabled = false
                                                 tt.start()
                                             }
                                         }, 200)

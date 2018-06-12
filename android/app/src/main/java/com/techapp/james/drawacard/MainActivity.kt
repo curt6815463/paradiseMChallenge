@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         var window = this.getWindow();
         window.setStatusBarColor(ContextCompat.getColor(this, R.color.colorBlack));
         var layoutManager = LinearLayoutManager(this)

@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.list_item.view.*
 
 class ListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -35,16 +36,22 @@ class ListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder> {
         var item = data[position]
         holder.cImageView.setImageResource(item.cImage)
         holder.bImageView.setImageResource(item.bImage)
-
+        if (position == (data.size - 1)) {
+            holder.bImageView.alpha = 0.5f
+            Glide.with(context).load(R.drawable.mockbackground).into(holder.mImageView);
+            holder.mImageView.alpha=0.5f
+        }
     }
 
     class ItemViewHolder : RecyclerView.ViewHolder {
         var cImageView: ImageView
         var bImageView: ImageView
+        var mImageView: ImageView
 
         constructor(itemView: View) : super(itemView) {
             cImageView = itemView.cImageView
             bImageView = itemView.bImageView
+            mImageView = itemView.mockImageView
         }
     }
 

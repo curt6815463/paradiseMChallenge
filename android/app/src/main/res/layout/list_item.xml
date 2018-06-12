@@ -6,6 +6,21 @@
     android:layout_height="wrap_content">
 
     <ImageView
+        android:id="@+id/mockImageView"
+        android:layout_width="109dp"
+        android:layout_height="111dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.21"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <ImageView
         android:id="@+id/bImageView"
         android:layout_width="141dp"
         android:layout_height="165dp"
@@ -24,4 +39,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/c1" />
+
 </android.support.constraint.ConstraintLayout>

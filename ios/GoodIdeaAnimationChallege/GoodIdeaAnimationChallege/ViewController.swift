@@ -27,6 +27,14 @@ class ViewController: UIViewController {
     
     @IBAction func openAction(_ sender: UIButton) {
         
+        
+        //按下按鈕後按鈕後面的buttonImage會先消失再出來
+        UIView.animate(withDuration: 0.8) {
+            self.buttonImage.layer.opacity = 0
+            self.buttonImage.layer.opacity = 1
+            self.openButton.setTitle("Hide", for: .normal)
+        }
+        
         //按下按鈕後要顯示出亮光cardShine
         boxImageView.isHidden = true
 //        cardShineImageView.isHidden = true
@@ -42,7 +50,7 @@ class ViewController: UIViewController {
                 self.timer.invalidate()
             }
     
-        openButton.setTitle("Hide", for: .normal)
+//        openButton.setTitle("Hide", for: .normal)
         mockImageView.isHidden = true
         openButton.isEnabled = false
     }

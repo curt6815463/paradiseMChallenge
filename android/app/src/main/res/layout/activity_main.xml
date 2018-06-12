@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlack"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/randomBtn"
+        android:layout_width="242dp"
+        android:layout_height="51dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/btn_blue"
+        android:text="Open"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/randomRecyclerView" />
+
+    <ImageView
+        android:id="@+id/mockImageView"
+        android:layout_width="297dp"
+        android:layout_height="311dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/randomBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/randomRecyclerView"
+        android:layout_width="141dp"
+        android:layout_height="165dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="184dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <ImageView
+        android:id="@+id/shineImageView"
+        android:layout_width="191dp"
+        android:layout_height="206dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@+id/cardMaskImageView"
+        app:layout_constraintEnd_toEndOf="@+id/cardMaskImageView"
+        app:layout_constraintStart_toStartOf="@+id/cardMaskImageView"
+        app:layout_constraintTop_toTopOf="@+id/cardMaskImageView"
+        app:srcCompat="@drawable/card_shine" />
+
+    <ImageView
+        android:id="@+id/cardMaskImageView"
+        android:layout_width="141dp"
+        android:layout_height="165dp"
+        android:background="@drawable/card_back"
+        app:layout_constraintBottom_toBottomOf="@+id/randomRecyclerView"
+        app:layout_constraintEnd_toEndOf="@+id/randomRecyclerView" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,201 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, ../../../../.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 1, ../sass/partial/style.scss */
+body {
+  background-color: black;
+  height: 100vh;
+}
+/* line 6, ../sass/partial/style.scss */
+body #card-container {
+  position: relative;
+  height: 100vh;
+}
+/* line 10, ../sass/partial/style.scss */
+body #card-container #woo {
+  background-image: url("http://www.olgame.tw/lm/css/lmimg/gacha/card_aura_gray_180x180.png"), url("http://www.olgame.tw/lm/css/lmimg/gacha/card_aura_gray_128x128.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: 500px;
+  animation: curt 1s steps(29) infinite;
+  /*
+  position: absolute;
+  top: 13%;
+  left: 50%;
+  transform: translateX(-50%);
+  */
+  height: 450px;
+  width: 450px;
+  overflow: hidden;
+}
+/* line 25, ../sass/partial/style.scss */
+body #card-container #woo #cover {
+  width: 237px;
+  margin-left: 100px;
+  overflow: hidden;
+}
+/* line 29, ../sass/partial/style.scss */
+body #card-container #woo #cover #img {
+  background-image: url("http://www.olgame.tw/lm/css/lmimg/gacha/card_back_82x100.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 11%;
+  left: 51%;
+  transform: translateX(-50%);
+  height: 35%;
+  width: 260px;
+}
+/* line 40, ../sass/partial/style.scss */
+body #card-container #woo #cover #card {
+  background-image: url("http://www.olgame.tw/lm/css/lmimg/gacha/card_slot_line_94x112.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+  height: 40%;
+  width: 267px;
+  opacity: 1;
+  animation: card 2s infinite;
+  position: absolute;
+  top: 9%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* line 54, ../sass/partial/style.scss */
+body #card-container #woo #cover #out {
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  position: absolute;
+  top: 11%;
+  left: 51%;
+  transform: translateX(-50%);
+  height: 35%;
+  width: 230px;
+}
+/* line 65, ../sass/partial/style.scss */
+body #card-container #woo #cover #out #item {
+  overflow: hidden;
+  display: none;
+  width: 267px;
+  height: 140px;
+  margin-left: 20px;
+  width: 900px;
+  padding-top: 77px;
+}
+/* line 74, ../sass/partial/style.scss */
+body #card-container #woo #cover #out #item #people {
+  animation: run 2s;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+/* line 78, ../sass/partial/style.scss */
+body #card-container #woo #cover #out #item #people > div {
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+}
+/* line 92, ../sass/partial/style.scss */
+body #card-container button {
+  background-image: url("http://www.olgame.tw/lm/css/lmimg/gacha/btn_blue_92x31.png");
+  background-color: blue;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  height: 50px;
+  width: 400px;
+  top: 82%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes curt {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+@keyframes card {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*
+@keyframes run {
+  0% {margin-left: 0;}
+  100% {margin-left: -1200px;}
+}
+*/

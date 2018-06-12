@@ -21,3 +21,7 @@
 
 * 卡片閃爍一下
 * 人物上小迷霧
+
+
+web
+https://media.giphy.com/media/loLTJZVN05ok0y2Uy6/giphy.gif

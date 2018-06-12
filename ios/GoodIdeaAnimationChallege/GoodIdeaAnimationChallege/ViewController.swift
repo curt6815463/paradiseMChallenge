@@ -42,7 +42,7 @@ class ViewController: UIViewController {
                 self.timer.invalidate()
             }
     
-        
+        openButton.setTitle("Hide", for: .normal)
         mockImageView.isHidden = true
         openButton.isEnabled = false
     }
@@ -60,13 +60,7 @@ class ViewController: UIViewController {
                     self.cardShineImageView.layer.opacity = 0
                 }, completion: nil)
             }
-            
              self.timer.invalidate()
-            
-//             UIView.animate(withDuration: 0.5) {
-//                self.cardShineImageView.layer.opacity = 1
-//                self.cardShineImageView.layer.opacity = 0
-//             }
         }
     }
     
@@ -91,19 +85,14 @@ class ViewController: UIViewController {
             characterBackgroundImageView = UIImageView()
             characterMockImageView = UIImageView()
             characterBackgroundImageView.frame = CGRect(x: self.imageScrollView.frame.width * CGFloat(i), y: 0, width: self.imageScrollView.frame.width, height: self.imageScrollView.frame.height)
-//            cardlImageView.frame = CGRect(x: self.imageScrollView.frame.width * CGFloat(i), y: 0, width: self.imageScrollView.frame.width, height: self.imageScrollView.frame.height)
             cardlImageView.frame = CGRect(x: 0, y: 0, width: characterBackgroundImageView.frame.width, height: characterBackgroundImageView.frame.height)
             characterMockImageView.frame = CGRect(x: 0, y: 0, width: characterBackgroundImageView.frame.width, height: characterBackgroundImageView.frame.height)
             cardlImageView.image = UIImage(named: charaterArray[i].characterName)
             characterBackgroundImageView.image = UIImage(named: charaterArray[i].characterBackground)
             characterMockImageView.loadGif(name: "mock")
-            
-//            self.characterMockImageView.addSubview(characterBackgroundImageView)
             self.characterBackgroundImageView.addSubview(characterMockImageView)
             self.characterMockImageView.addSubview(cardlImageView)
-//            self.characterBackgroundImageView.addSubview(cardlImageView)
-            characterMockImageView.layer.opacity = 0.8
-//            self.imageScrollView.addSubview(characterBackgroundImageView)
+            characterMockImageView.layer.opacity = 0.5
             self.imageScrollView.addSubview(characterBackgroundImageView)
         }
     }

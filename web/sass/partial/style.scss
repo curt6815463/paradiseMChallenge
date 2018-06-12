@@ -1,120 +1,170 @@
 body {
   background-color: black;
   height: 100vh;
-  
+  position: relative;
 
-  #card-container {
-    position: relative;
-    height: 100vh;
+  #woo {
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    left: 50%;
+    top: 10%;
+    transform: translateX(-50%);
 
-    #woo {
-      background-image: url("http://www.olgame.tw/lm/css/lmimg/gacha/card_aura_gray_180x180.png"), url("http://www.olgame.tw/lm/css/lmimg/gacha/card_aura_gray_128x128.png");
+    background-image: url("http://www.olgame.tw/lm/css/lmimg/gacha/card_aura_gray_180x180.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: woo 1s steps(29) infinite;
+
+    text-align: center;
+
+    //outside white frame: have animation opacity
+    #frame {
+      background-image: url("http://www.olgame.tw/lm/css/lmimg/gacha/card_slot_line_94x112.png");
       background-repeat: no-repeat;
       background-size: cover;
-      margin-left: 500px;
-      animation: curt 1s steps(29) infinite;
-      /*
+      height: 256px;
+      width: 208px;
+      margin: 0 auto;
       position: absolute;
-      top: 13%;
       left: 50%;
+      top: 23%;
       transform: translateX(-50%);
-      */
-      height: 450px;
-      width: 450px;
+
+      //animation: 2s frame infinite;
+      animation-name: frame;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+    }
+    #pop_shine {
+      background-image: url("http://www.olgame.tw/lm/css/lmimg/gacha/card_shine2_106x123.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 256px;
+      width: 208px;
+      margin: 0 auto;
+      position: absolute;
+      left: 50%;
+      top: 23%;
+      transform: translateX(-50%);
+
+      //animation: 2s frame infinite;
+      animation-name: pop_shine;
+      animation-duration: 1s;
+      animation-iteration-count: 1 !important;
+    }
+    #woo2 {
+      background-image: url("http://www.olgame.tw/lm/css/lmimg/gacha/card_aura_gray_128x128.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 200px;
+      width: 200px;
+      margin: 0 auto;
+      position: absolute;
+      left: 50%;
+      top: 23%;
+      transform: translateX(-50%);
+
+      animation: woo 1s steps(29) infinite;
+    }
+
+    //first card: should disappear after click
+    #first-card {
+      position: absolute;
+      left: 51%;
+      top: 27%;
+      transform: translateX(-50%);
+      height: 229px;
+      img {
+        height: 100%;
+      }
+    }
+
+    #scroll {
+      height: 229px;
+      width: 187.76px;
+      height: 229px;
+      width: 187.76px;
+      position: absolute;
+      left: 54%;
+      top: 27%;
+      transform: translateX(-50%);
       overflow: hidden;
-      #cover {
-        width: 237px;
-        margin-left: 100px;
-        overflow: hidden;
-        #img {
-          background-image: url("http://www.olgame.tw/lm/css/lmimg/gacha/card_back_82x100.png");
-          background-repeat: no-repeat;
-          background-size: contain;
-          position: absolute;
-          top: 11%;
-          left: 51%;
-          transform: translateX(-50%);
-          height: 35%;
-          width: 260px;
-        }
-        #card {
-          background-image: url("http://www.olgame.tw/lm/css/lmimg/gacha/card_slot_line_94x112.png");
+
+      padding: 0 10px;
+      ul {
+        display: none;
+        width: 6100px;
+        height: 100%;
+        margin-left: -139px;
+        > div {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          height: 229px;
+          width: 187.76px;
+          background-image: url("http://www.olgame.tw/lm/css/lmimg/gacha/card_slot_82x100.png");
           background-repeat: no-repeat;
           background-size: cover;
-          background-position: left;
-          height: 40%;
-          width: 267px;
-          opacity: 1;
-          animation: card 2s infinite;
-          position: absolute;
-          top: 9%;
-          left: 50%;
-          transform: translateX(-50%);
-        }
-        #out {
-          overflow: hidden;
-          background-repeat: no-repeat;
-          background-position: right;
-          background-size: cover;
-          position: absolute;
-          top: 11%;
-          left: 51%;
-          transform: translateX(-50%);
-          height: 35%;
-          width: 230px;
-          #item {
-            overflow: hidden;
-            display: none;
-            width: 267px;
-            height: 140px;
-            margin-left: 20px;
-            width: 900px;
-            padding-top: 77px;
-            
-            #people {
-              animation: run 2s;
-              background-repeat: no-repeat;
-              background-size: contain;
-              > div {
-                display: inline-block;
-                width: 200px;
-                text-align: center;
-                img {
-                  //margin: 0 50px;
-                }
-              }
-            }
+          margin: 0 -3px;
+          img{
+            justify-content: center;
+            align-items: center;
           }
+        }
+        > div:nth-child(5n+1) {
+          background-position: 0;
+        }
+        > div:nth-child(5n+2) {
+          background-position: -188px;
+        }
+        > div:nth-child(5n+3) {
+          background-position: -374px;
+        }
+        > div:nth-child(5n+4) {
+          background-position: -563px;
+        }
+        > div:nth-child(5n+5) {
+          background-position: -750px;
         }
       }
     }
-    
+
     button {
       background-image: url("http://www.olgame.tw/lm/css/lmimg/gacha/btn_blue_92x31.png");
-      background-color: blue;
       background-repeat: no-repeat;
-      background-size: cover;
       background-position: center;
+      background-size: 120%;
+      width: 350px;
+      height: 42px;
+
       position: absolute;
-      height: 50px;
-      width: 400px;
-      top: 82%;
       left: 50%;
+      bottom: -30%;
       transform: translateX(-50%);
+
+      color: white;
+      font-size: 20px;
+      background-color: black;
+      border: none;
     }
   }
 }
- @keyframes curt {
+
+//animation
+@keyframes woo {
   0%   { background-position: 0%; }
   100% { background-position: 100%; }
  }
- @keyframes card {
-  0%   { opacity: 0 ;}
-  100% { opacity: 1 ;}
+ @keyframes frame {
+   0% {opacity: 0;}
+   100% {opacity: 1;}
  }
- /*
- @keyframes run {
-   0% {margin-left: 0;}
-   100% {margin-left: -1200px;}
+ @keyframes pop_shine {
+   0% {opacity: 1;}
+   100% {opacity: 0;}
  }
- */
+ @keyframes button_bg_change {
+   0% {opacity: 0;}
+   100% {opacity: 1;}
+ }
